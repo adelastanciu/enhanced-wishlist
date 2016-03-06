@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <adelapack translate="" module="enhancedwishlist">
+            <label>Adela Pack</label>
+            <sort_order>10</sort_order>
+        </adelapack>
+    </tabs>
+    <sections>
+        <enhancedwishlist>
+            <label>Enhanced Wishlist</label>
+            <sort_order>10</sort_order>
+            <tab>adelapack</tab>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <email translate="label comment">
+                            <label>Email address</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>The email address the csv file will be sent to.</comment>
+                            <validate>validate-email</validate>
+                        </email>
+                        <name translate="label comment">
+                            <label>Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Recipient name</comment>
+                            <validate>validate-email</validate>
+                        </name>
+                    </fields>
+                </general>
+            </groups>
+        </enhancedwishlist>
+    </sections>
+</config>

@@ -1,0 +1,25 @@
+<?php $_product = $this->getProduct(); ?>
+<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
+
+<ul class="add-to-links">
+    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+        <li>
+            <a href="javascript:void(0);" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
+            <input type="hidden" name="wishlistUrl" class="wishlistUrl" value="<?php echo $_wishlistSubmitUrl ?>" />
+        </li>
+    <?php endif; ?>
+    <?php
+    $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product);
+    ?>
+    <?php if($_compareUrl) : ?>
+        <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+    <?php endif; ?>
+
+</ul>
+
+<?php echo $this->getChildHtml('popup'); ?>
+
+<script type="text/javascript">
+    var baseUrl = '<?php echo Mage::getBaseUrl(); ?>';
+    var id = '<?php echo $_product->getId()?>';
+</script>

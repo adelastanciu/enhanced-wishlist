@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <AdelaPack_EnhancedWishlist>
+            <version>0.1.0</version>
+        </AdelaPack_EnhancedWishlist>
+    </modules>
+    <global>
+        <blocks>
+            <enhancedwishlist>
+                <class>AdelaPack_EnhancedWishlist_Block</class>
+            </enhancedwishlist>
+            <adminhtml>
+                <rewrite>
+                    <customer_grid>AdelaPack_EnhancedWishlist_Block_Adminhtml_Customer_Grid</customer_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <helpers>
+            <enhancedwishlist>
+                <class>AdelaPack_EnhancedWishlist_Helper</class>
+            </enhancedwishlist>
+        </helpers>
+        <models>
+            <enhancedwishlist>
+                <class>AdelaPack_EnhancedWishlist_Model</class>
+            </enhancedwishlist>
+        </models>
+    </global>
+    <crontab>
+        <jobs>
+            <enhancedwishlist_email>
+                <schedule>0 0 * * *</schedule>
+                <run>
+                    <model>enhancedwishlist/job::emailWishlists</model>
+                </run>
+            </enhancedwishlist_email>
+        </jobs>
+    </crontab>
+    <default>
+        <enhancedwishlist>
+            <general>
+                <email>black.s3ptember@gmail.com</email>
+                <name>Adela Stanciu</name>
+            </general>
+        </enhancedwishlist>
+    </default>
+    <frontend>
+        <routers>
+            <wishlist>
+                <use>standard</use>
+                <args>
+                    <module before="Mage_Wishlist">AdelaPack_EnhancedWishlist</module>
+                    <frontName>enhancedwishlist</frontName>
+                </args>
+            </wishlist>
+        </routers>
+        <layout>
+            <updates>
+                <favorites>
+                    <file>adelapack/enhancedwishlist.xml</file>
+                </favorites>
+            </updates>
+        </layout>
+    </frontend>
+</config>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <enhancedwishlist translate="title">
+                                        <title>Enhanced Wishlist Configuration</title>
+                                        <sort_order>10</sort_order>
+                                    </enhancedwishlist>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
